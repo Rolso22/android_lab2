@@ -43,7 +43,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   late Future<CurrentWeather> _calculation;
 
   Future<CurrentWeather> loadWeather() async {
-    await Future.delayed(Duration(seconds: 10));
     var regionName = getRegion();
     print("get region: $regionName");
     var response = await http.get(Uri.parse('http://api.worldweatheronline.com/premium/v1/weather.ashx?key=ab445736b43d49fd82f141119221111&q=$regionName&format=json'));
